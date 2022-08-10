@@ -33,7 +33,7 @@ const Form = () => {
             client_secret: "7A5CC4A6E2D76D470933BC7ABD8D7A6F596BC7CDD92F5352469AC58065DA6AB7",
             redirect_uri: "https://web-to-lead-app-dentsu.herokuapp.com/form"
             }
-        axios.post("https://login.salesforce.com/services/oauth2/token", {body:body}, {headers:{
+        axios.post("https://login.salesforce.com/services/oauth2/introspect", {body:body}, {headers:{
             "Access-Control-Allow-Origin" : "*",
             'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
             'Content-Type': 'application/x-www-form-urlencoded'
