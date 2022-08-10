@@ -31,7 +31,7 @@ const Form = () => {
             code: code,
             client_id: "3MVG9wt4IL4O5wvJidVoZyfx_jUvv0N3NT.Ln0NsG_S8TgSMmTtSsJ1nDQthfOIJLxIgEfE28B_N42dlU88cH",
             client_secret: "7A5CC4A6E2D76D470933BC7ABD8D7A6F596BC7CDD92F5352469AC58065DA6AB7",
-            redirect_uri: "http://localhost:3000/form"
+            redirect_uri: "https://web-to-lead-app-dentsu.herokuapp.com/form"
             }
         axios.post("https://login.salesforce.com/services/oauth2/token", {body:body}, {headers:{
             "Access-Control-Allow-Origin" : "*",
@@ -59,8 +59,6 @@ const Form = () => {
         const newData = { ...userData }
         setData([...data, newData]);
         console.log(userData);
-
-
         axios.post("https://dentsuworldservices-8b-dev-ed.lightning.force.com/services/data/v54.0/sobjects/Lead",userData)
         .then((resp) => {
           console.log(resp.data)
